@@ -40,7 +40,7 @@ async function createPokemonCard(id) {
 					<img src=${data.sprites.other["official-artwork"].front_default} alt=${data.name}>
 				</div>
 				<div class="info">
-					<span class="number">00${data.id}</span>
+					<span class="number">${data.id.toString().padStart(3, '0')}</span>
 					<h3 class="name">${data.name}</h3>
 					<small class="type">Type: <span>${data.types[0].name}</span></small>
 				</div>
