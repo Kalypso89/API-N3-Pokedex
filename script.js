@@ -41,13 +41,13 @@ async function createPokemonCard(id) {
 		const pokeData = await response.json();
 
 		//convierto el id en string
-		const idAsString = pokeData.id.toString()
+		const idAsString = pokeData.id.toString();
 
 		// añado el padding de 0 al principio
-		const paddedId = idAsString.padStart(3, '0')
+		const paddedId = idAsString.padStart(3, '0');
 
 		// obtengo el type de cada pokemon
-		const type = pokeData.types[0].type.name
+		const type = pokeData.types[0].type.name;
 
 	// creo el html que voy a insertar, con template, lo inserto en poke-container con insertAdjacentHTML
 		poke_container.insertAdjacentHTML('beforeend',
