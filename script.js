@@ -25,7 +25,7 @@ const myEndpoint = 'https://pokeapi.co/api/v2/pokemon/';
 
 //creo un contador para crear las 150 cards
 for (let id = 1; id <= pokemon_count; id++) {
-	await createPokemonCard(id);
+	createPokemonCard(id);
 }
 
 //creo la función asíncrona de crear cada card
@@ -54,7 +54,7 @@ async function createPokemonCard(id) {
 
 	// creo el html que voy a insertar, con template, lo inserto en poke-container con insertAdjacentHTML
 		poke_container.insertAdjacentHTML('beforeend',
-			`<article class="pokemon" style="background-color: ${colors[type]}">
+			`<article class="pokemon" style="background-color: ${colors[type]}; order: ${idAsString}">
 				<div class="img-container">
 					<img src=${img} alt=${pokeData.name}>
 				</div>
