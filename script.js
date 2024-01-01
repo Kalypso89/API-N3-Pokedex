@@ -49,11 +49,14 @@ async function createPokemonCard(id) {
 		// obtengo el type de cada pokemon
 		const type = pokeData.types[0].type.name;
 
+		//obtengo la img de cada pokemon
+		const img = pokeData.sprites.other["official-artwork"].front_default;
+
 	// creo el html que voy a insertar, con template, lo inserto en poke-container con insertAdjacentHTML
 		poke_container.insertAdjacentHTML('beforeend',
 			`<article class="pokemon" style="background-color: ${colors[type]}">
 				<div class="img-container">
-					<img src=${pokeData.sprites.other["official-artwork"].front_default} alt=${pokeData.name}>
+					<img src=${img} alt=${pokeData.name}>
 				</div>
 				<div class="info">
 					<span class="number">${paddedId}</span>
